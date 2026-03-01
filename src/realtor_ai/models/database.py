@@ -7,7 +7,11 @@ from contextlib import contextmanager
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+psycopg://user:pass@localhost:5432/realtor_ai")
+from .base import Base
+
+DATABASE_URL = os.getenv(
+    "DATABASE_URL", "postgresql+psycopg://user:pass@localhost:5432/realtor_ai"
+)
 
 gine = create_engine(DATABASE_URL, pool_pre_ping=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -25,3 +29,8 @@ def get_session():
         raise
     finally:
         session.close()
+
+
+def init_db() -> None:
+    """Create tables for development environments."""
+    Base.metadata.create_all(bind=engine)
