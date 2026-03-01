@@ -1,3 +1,21 @@
+Metadata-Version: 2.4
+Name: realtor-ai-copilot
+Version: 0.1.0
+Summary: AI-powered research and packet-generation assistant for buyer's agents
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: pydantic>=2.0
+Requires-Dist: pandas>=2.0
+Requires-Dist: openai>=1.0
+Requires-Dist: reportlab>=4.0
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: typer>=0.12
+Requires-Dist: rich>=13.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: pytest-cov>=5.0; extra == "dev"
+Requires-Dist: ruff>=0.4; extra == "dev"
+
 # realtor-ai-copilot
 
 AI-powered research and packet-generation assistant for buyer's agents — ingests MLS/IDX data,
@@ -21,7 +39,7 @@ pip install -e .
 export OPENAI_API_KEY="sk-..."
 
 # Run against sample data
-realtor-ai --listings data/sample_listings.csv \
+realtor-ai run --listings data/sample_listings.csv \
                --profile data/sample_profile.json \
                --output report.pdf
 ```

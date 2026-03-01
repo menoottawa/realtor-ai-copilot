@@ -1,0 +1,13 @@
+{
+  "name": "Alex & Jordan Chen",
+  "email": "alex.chen@example.com",
+  "max_price": 600000,
+  "min_price": 400000,
+  "min_bedrooms": 3,
+  "min_bathrooms": 2,
+  "min_sqft": 1600,
+  "preferred_cities": ["Ottawa", "Kanata", "Orleans"],
+  "preferred_property_types": ["Single Family", "Townhouse"],
+  "must_have_garage": false,
+  "notes": "Growing family, two young children. Important: near good schools and parks. Would prefer a finished basement. Not interested in condos."
+}
