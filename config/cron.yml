@@ -1,0 +1,19 @@
+jobs:
+  - name: ingest-mls
+    schedule: "*/30 * * * *"
+    command: "python pipelines/ingest_mls.py"
+  - name: enrich-listings
+    schedule: "0 * * * *"
+    command: "python pipelines/enrich_listings.py"
+  - name: match-engine
+    schedule: "*/30 * * * *"
+    command: "python pipelines/match_engine.py"
+  - name: ai-analysis-worker
+    schedule: "@reboot"
+    command: "python pipelines/ai_analysis_worker.py"
+  - name: packet-generator
+    schedule: "@reboot"
+    command: "python pipelines/packet_generator.py"
+  - name: notify-agents
+    schedule: "*/10 * * * *"
+    command: "python pipelines/notify_agents.py"
