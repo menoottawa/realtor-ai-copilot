@@ -1,2 +1,0 @@
-[console_scripts]
-realtor-ai = realtor_ai_copilot.main:app
